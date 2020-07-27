@@ -4,6 +4,7 @@ public class WordFrequencyGame {
 
     public static final String BLANK_PATTERN = "\\s+";
     public static final String NEW_LINE_DELIMITER = "\n";
+    public static final String CALCULATE_ERROR = "Calculate Error";
 
     public String getResult(String sentence) {
 
@@ -40,7 +41,7 @@ public class WordFrequencyGame {
                 }
                 return joiner.toString();
             } catch (Exception e) {
-                return "Calculate Error";
+                return CALCULATE_ERROR;
             }
         }
     }
