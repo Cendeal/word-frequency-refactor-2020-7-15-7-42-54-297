@@ -1,20 +1,23 @@
 import java.util.*;
 
 public class WordFrequencyGame {
+
+    public static final String BLANK_PATTERN = "\\s+";
+
     public String getResult(String sentence) {
 
 
-        if (sentence.split("\\s+").length == 1) {
+        if (sentence.split(BLANK_PATTERN).length == 1) {
             return sentence + " 1";
         } else {
 
             try {
 
-                String[] words = sentence.split("\\s+");
+                String[] words = sentence.split(BLANK_PATTERN);
 
                 List<Input> inputList = new ArrayList<>();
-                for (String word : words) {
-                    Input input = new Input(word, 1);
+                for (String s : words) {
+                    Input input = new Input(s, 1);
                     inputList.add(input);
                 }
 
