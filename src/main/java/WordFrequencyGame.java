@@ -2,17 +2,17 @@ import java.util.*;
 
 public class WordFrequencyGame {
 
-    public static final String BLANK_PATTERN = "\\s+";
-    public static final String NEW_LINE_DELIMITER = "\n";
-    public static final String CALCULATE_ERROR = "Calculate Error";
+    private static final String BLANK_PATTERN = "\\s+";
+    private static final String NEW_LINE_DELIMITER = "\n";
+    private static final String CALCULATE_ERROR = "Calculate Error";
 
     public String getResult(String sentence) {
         try {
-            List<Word> inputList = calculateWordFrequency(sentence);
-            inputList.sort((w1, w2) -> w2.getWordCount() - w1.getWordCount());
+            List<Word> wordInfoList = calculateWordFrequency(sentence);
+            wordInfoList.sort((w1, w2) -> w2.getWordCount() - w1.getWordCount());
 
             StringJoiner joiner = new StringJoiner(NEW_LINE_DELIMITER);
-            for (Word w : inputList) {
+            for (Word w : wordInfoList) {
                 String s = w.getValue() + " " + w.getWordCount();
                 joiner.add(s);
             }
